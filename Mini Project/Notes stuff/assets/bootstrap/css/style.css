@@ -2,5 +2,35 @@
     
 }
 #addit{
-   margin-top: 5px;
+}
+li{
+   padding: 15px;
+   position: relative;
+    border-bottom: 1px solid #1444019c;
+    height: 46px;
+}
+li div{
+   position: absolute;
+   top: 0;
+   color: white;
+   right: 0px;
+   width: 40px;
+   text-align: center;
+   padding: 10px 0;
+   font-weight:  bold;
+   cursor:  pointer;
+}
+li div:hover{
+   position: absolute;
+   top: 0;
+   color:white;
+   border: 1px solid rgba(24, 49, 7, 0.74);
+   border-radius: 25px;
+   background-color: rgba(24, 49, 7, 0.74);
+   right: 0px;
+   width: 40px;
+   text-align: center;
+   padding: 10px 0;
+   font-weight:  bold;
+   cursor:  pointer;
 }
