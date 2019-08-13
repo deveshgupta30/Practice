@@ -6,17 +6,21 @@ function renderplist(doc){
     let pro= document.createElement('span');
     let desc=document.createElement('pre');
     let cross=document.createElement('div');
+    let edit=document.createElement('div1');
 
     
 
     li.setAttribute('data-id',doc.id);
     pro.textContent = doc.data().pro;
     desc.textContent=doc.data().desc;
-    cross.textContent = '×';
+    cross.textContent = 'x';
+    edit.textContent = "edit";
 
     li.appendChild(pro);
     li.appendChild(desc);
+    li.appendChild(edit);
     li.appendChild(cross);
+
 
     projectlist.appendChild(li);
 
@@ -24,6 +28,27 @@ function renderplist(doc){
         e.stopPropagation();
         let id= e.target.parentElement.getAttribute('data-id');
         db.collection('PLIST').doc(id).delete();
+    })
+
+    edit.addEventListener('click', (e) =>{
+        e.stopPropagation();
+        let id= e.target.parentElement.getAttribute('data-id');
+        var name=prompt("Enter the name of your idea!","");
+        if(name==="")
+        {
+            alert("ENTER IDEA NAME FOR GOD SAKE!");
+            return;
+        }
+        else{
+            var descr=prompt("Enter the description!","");
+            db.collection('PLIST').doc(id).update(
+                {
+                    pro: name,
+                    desc: descr
+                }
+            );
+            alert("Refresh to see changes");
+        }
     })
 }
 
