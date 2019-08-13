@@ -61,4 +61,3 @@ db.collection('PLIST').onSnapshot(snapshot =>{
         }
     });
 });
-
