@@ -4,13 +4,18 @@ const form=document.querySelector('#enterIdea');
 function renderplist(doc){
     let li=document.createElement('li');
     let pro= document.createElement('span');
+    let desc=document.createElement('pre');
     let cross=document.createElement('div');
+
+    
 
     li.setAttribute('data-id',doc.id);
     pro.textContent = doc.data().pro;
+    desc.textContent=doc.data().desc;
     cross.textContent = '×';
 
     li.appendChild(pro);
+    li.appendChild(desc);
     li.appendChild(cross);
 
     projectlist.appendChild(li);
@@ -28,9 +33,6 @@ function renderplist(doc){
     })
 }) */
 
-
-const ran = Math.floor(Math.random() * 1000000); 
-
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     var empt= document.form1.eidea.value;
@@ -42,9 +44,11 @@ form.addEventListener('submit', (e) => {
     }
     else{
     db.collection('PLIST').add({
-        pro: form.eidea.value
+        pro: form.eidea.value,
+        desc: form.idead.value
     });
     form.eidea.value='';
+    form.idead.value='';
     return true;
 }
 });
