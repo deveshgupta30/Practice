@@ -2,13 +2,6 @@ const projectlist = document.querySelector("#prolist");
 const form = document.querySelector("#enterIdea");
 
 const firebaseApp = firebase.initializeApp({
-  apiKey: "AIzaSyAMrKpjZHQ6Jpoyy9LmneDLmw6-eYfrf2A",
-  authDomain: "minip-17d3c.firebaseapp.com",
-  databaseURL: "https://minip-17d3c.firebaseio.com",
-  projectId: "minip-17d3c",
-  storageBucket: "",
-  messagingSenderId: "279851214475",
-  appId: "1:279851214475:web:afeb23ca4ab74a7f",
 });
 const db = firebaseApp.firestore();
 db.settings({ timestampsInSnapshots: true, merge: true });
