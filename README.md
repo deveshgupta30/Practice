@@ -1,2 +1,2 @@
-# Practice
-For practicing stuffs...
+MiniP
+Just another note making open app without authentication.
